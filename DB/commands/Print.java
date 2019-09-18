@@ -37,8 +37,13 @@ public class Print{
 	public void printtable(String tablename) throws Exception{
 		String path="tables/"+tablename+".txt";
 		List<String> allLines = Files.readAllLines(Paths.get(path));
+		System.out.println("|--------------------------------------------------------------------------|");
 			for (String line : allLines) {
-				System.out.println(line.replaceAll(",","\t\t"));
+				System.out.print("|\t");
+				System.out.println(line.replaceAll(",","\t | \t")+"\t\t");
+				System.out.println("|--------------------------------------------------------------------------|");
+				
+
 			}
 		
 	}

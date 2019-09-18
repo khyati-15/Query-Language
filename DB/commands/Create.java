@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class Create{
-	Pattern pattern = Pattern.compile("[a-zA-Z ]*");
+	Pattern pattern = Pattern.compile("[a-zA-Z_]*");
 	public String keywords[]={"as","table","into","create","select","insert","load","print","store","exit","quit","from"};
 	List<String> keyword = Arrays.asList(keywords);
 
@@ -75,8 +75,7 @@ public class Create{
 		String columns=input[3];
 		for(int i=4;i<input.length;i++){
 			columns+=input[i];
-//			if(input[i].charAt(input[i].length()-1)!=',')
-//				columns+=" ";
+
 		}
 		columns=columns.trim().replaceAll("\\s{2,}", " ");
 		columns=columns.replace("(","");

@@ -10,7 +10,6 @@ class StringOptimized{
 		input=input.replace("("," (");
 		input=input.replace(";","");
 		input=input.trim().replaceAll("\\s{2,}", " ");
-		
 		input=input.toLowerCase();
 		String tokens[]=input.split(" ");
 
@@ -38,11 +37,22 @@ class StringOptimized{
 					
 				}
 			}
+			else if(tokens[0].equals("insert")){
+				Insert obj=new Insert();
+				if(obj.validate(tokens)){
+				}
+			}
 			else if(tokens[0].equals("exit") || tokens[0].equals("quit")){
 				if(tokens.length==1)
 					System.exit(0);
 				else
 					System.out.println("Syntax incorrect");
+			}
+			else if(tokens[0].equals("select")){
+				Select obj=new Select();
+				if(obj.validate(tokens)){
+					
+				}
 			}
         }
 		else
